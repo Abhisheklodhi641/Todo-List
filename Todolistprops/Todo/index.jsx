@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Completed from '../Completed';
 
 const Todo = (props)=>{
+    
     let [input,setInput] = useState("");
     const [add,setAdd] = useState([])
-    // console.log(input)
+    
     const Add=() => {
          const adds = [...add,input]
          setAdd(adds);
@@ -13,19 +14,11 @@ const Todo = (props)=>{
     return(
         <div style={{    marginLeft: "40%",
             fontSize: "xxx-large"}}>
-           <input type="text" placeholder="text...." onChange={(e)=>setInput(e.target.value)} value={input}/>
-           <button type='submit' onClick={()=>Add()} style={{cursor:"pointer"}}>ADD</button>
-           <div>
-         <Completed  data={add} />
-            {/* {add.map((list,index)=>{
-                return(
-                    <div>
-                        {list}
-                        <button>com</button>
-                    </div>
-                )
-            })} */}
-           </div>
+            <input type="text" placeholder="text...." onChange={(e)=>setInput(e.target.value)} value={input}/>
+            <button type='submit' onClick={()=>Add()} style={{cursor:"pointer"}}>ADD</button>
+             <div>
+               <Completed  data={add} />
+             </div>
         </div>
     )
 }
