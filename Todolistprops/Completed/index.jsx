@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import Complet from '../complete';
 const Completed =  (props) =>{
-    // console.log("props=>",props);
+
     const {data}=props;
     const [comp,setComp] = useState([])
 
     const Complete = (index) => {
         const comps = [...comp,data.splice(index,1)];
         setComp (comps);
-        // console.log("comp=>",comp);
 
     }
     return(
